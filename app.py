@@ -38,6 +38,8 @@ def get_result(roll_no):
         return jsonify({"name": result[0], "marks": result[1]})
     return jsonify({"message": "Result not found"}), 404
 
+db_helper.create_table()
+
 if __name__ == "__main__":
-    db_helper.create_table()
     app.run(host="0.0.0.0", port=5000)
+
